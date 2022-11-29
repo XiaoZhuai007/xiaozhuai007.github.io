@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>XiaoZhuaiの博客</title>
+  
+  
+  <link href="http://blog.13141024.xyz/atom.xml" rel="self"/>
+  
+  <link href="http://blog.13141024.xyz/"/>
+  <updated>2022-11-29T01:22:40.950Z</updated>
+  <id>http://blog.13141024.xyz/</id>
+  
+  <author>
+    <name>XiaoZhuai</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>图片资源引用问题的解决方案</title>
+    <link href="http://blog.13141024.xyz/2022/11/29/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>http://blog.13141024.xyz/2022/11/29/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
+    <published>2022-11-29T01:03:44.000Z</published>
+    <updated>2022-11-29T01:22:40.950Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Markdown-资源的应用解决方法"><a href="#Markdown-资源的应用解决方法" class="headerlink" title="Markdown 资源的应用解决方法"></a>Markdown 资源的应用解决方法</h1><p>作者第一次使用Hexo写博客时候发现 Markdown的图片资源无法被正常引用 后来查询了很多资料，常见的解决方案如下：</p><h2 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h2><p>使用 hexo-renderer-marked 进行引用</p><ol><li>检查hexo项目根目录下的package.js文件 dependencies 下是否已安装此依赖</li></ol><p><img src="/2022/11/29/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/image-20221129091242610.png" alt="image-20221129091242610"></p><p>如果没有此依赖请使用下方命令进行依赖的安装</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-marked --save</span><br></pre></td></tr></table></figure><ol start="2"><li>进入hexo根目录下的<code> _config.yml</code> 配置文件添加以下配置</li></ol><p><code>启用后，资源图片将会被自动解析为其对应文章的路径。 例如： </code>image.jpg<code>位置为</code>&#x2F;2020&#x2F;01&#x2F;02&#x2F;foo&#x2F;image.jpg<code>，这表示它是</code>&#x2F;2020&#x2F;01&#x2F;02&#x2F;foo&#x2F;<code>文章的一张资源图片，</code><img src="/image.jpg"><code>将会被解析为</code><img src="/2020/01/02/foo/image.jpg"><code> 。</code></p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure><blockquote><p> 参考资料：<a href="https://hexo.io/zh-cn/docs/asset-folders.html">https://hexo.io/zh-cn/docs/asset-folders.html</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Markdown-资源的应用解决方法&quot;&gt;&lt;a href=&quot;#Markdown-资源的应用解决方法&quot; class=&quot;headerlink&quot; title=&quot;Markdown 资源的应用解决方法&quot;&gt;&lt;/a&gt;Markdown 资源的应用解决方法&lt;/h1&gt;&lt;p&gt;作者第一次使</summary>
+      
+    
+    
+    
+    
+    <category term="-hexo" scheme="http://blog.13141024.xyz/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
