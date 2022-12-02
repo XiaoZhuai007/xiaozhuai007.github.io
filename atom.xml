@@ -6,7 +6,7 @@
   <link href="http://blog.13141024.xyz/atom.xml" rel="self"/>
   
   <link href="http://blog.13141024.xyz/"/>
-  <updated>2022-11-29T01:22:40.950Z</updated>
+  <updated>2022-12-02T06:21:53.940Z</updated>
   <id>http://blog.13141024.xyz/</id>
   
   <author>
@@ -17,24 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>图片资源引用问题的解决方案</title>
-    <link href="http://blog.13141024.xyz/2022/11/29/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>http://blog.13141024.xyz/2022/11/29/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
-    <published>2022-11-29T01:03:44.000Z</published>
-    <updated>2022-11-29T01:22:40.950Z</updated>
+    <title>CentOS 7 保姆式教学</title>
+    <link href="http://blog.13141024.xyz/2022/12/02/CentOS-7-%E4%BF%9D%E5%A7%86%E5%BC%8F%E6%95%99%E5%AD%A6-%E5%AE%89%E8%A3%85%20(%E4%B8%80)/"/>
+    <id>http://blog.13141024.xyz/2022/12/02/CentOS-7-%E4%BF%9D%E5%A7%86%E5%BC%8F%E6%95%99%E5%AD%A6-%E5%AE%89%E8%A3%85%20(%E4%B8%80)/</id>
+    <published>2022-12-02T02:26:15.000Z</published>
+    <updated>2022-12-02T06:21:53.940Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Markdown-资源的应用解决方法"><a href="#Markdown-资源的应用解决方法" class="headerlink" title="Markdown 资源的应用解决方法"></a>Markdown 资源的应用解决方法</h1><p>作者第一次使用Hexo写博客时候发现 Markdown的图片资源无法被正常引用 后来查询了很多资料，常见的解决方案如下：</p><h2 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h2><p>使用 hexo-renderer-marked 进行引用</p><ol><li>检查hexo项目根目录下的package.js文件 dependencies 下是否已安装此依赖</li></ol><p><img src="/2022/11/29/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/image-20221129091242610.png" alt="image-20221129091242610"></p><p>如果没有此依赖请使用下方命令进行依赖的安装</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-marked --save</span><br></pre></td></tr></table></figure><ol start="2"><li>进入hexo根目录下的<code> _config.yml</code> 配置文件添加以下配置</li></ol><p><code>启用后，资源图片将会被自动解析为其对应文章的路径。 例如： </code>image.jpg<code>位置为</code>&#x2F;2020&#x2F;01&#x2F;02&#x2F;foo&#x2F;image.jpg<code>，这表示它是</code>&#x2F;2020&#x2F;01&#x2F;02&#x2F;foo&#x2F;<code>文章的一张资源图片，</code><img src="/image.jpg"><code>将会被解析为</code><img src="/2020/01/02/foo/image.jpg"><code> 。</code></p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure><blockquote><p> 参考资料：<a href="https://hexo.io/zh-cn/docs/asset-folders.html">https://hexo.io/zh-cn/docs/asset-folders.html</a></p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;Markdown-资源的应用解决方法&quot;&gt;&lt;a href=&quot;#Markdown-资源的应用解决方法&quot; class=&quot;headerlink&quot; title=&quot;Markdown 资源的应用解决方法&quot;&gt;&lt;/a&gt;Markdown 资源的应用解决方法&lt;/h1&gt;&lt;p&gt;作者第一次使</summary>
-      
+    <content type="html"><![CDATA[<h1 id="安装前准备工作"><a href="#安装前准备工作" class="headerlink" title="安装前准备工作"></a>安装前准备工作</h1><p><strong>需准备以下工具：</strong></p><ul><li>U盘</li><li>CentOS-7 系统镜像</li><li>启动盘制作工具（<a href="https://rufus.ie/">Rufus</a>）</li></ul><span id="more"></span><h2 id="下载-CentOS-7-安装镜像"><a href="#下载-CentOS-7-安装镜像" class="headerlink" title="下载 CentOS 7 安装镜像"></a>下载 CentOS 7 安装镜像</h2><blockquote><p>Cent OS 7 镜像文件下载地址：<a href="http://mirrors.nju.edu.cn/centos/7.9.2009/isos/x86_64/">http://mirrors.nju.edu.cn/centos/7.9.2009/isos/x86_64/</a></p></blockquote><p><img src="/2022/12/02/CentOS-7-%E4%BF%9D%E5%A7%86%E5%BC%8F%E6%95%99%E5%AD%A6-%E5%AE%89%E8%A3%85%20(%E4%B8%80)/image-20221202112432706.png"></p><p>镜像版本根据需求进行自我选择</p><p>注：<em>本文以Minimal版镜像进行安装演示</em></p><h2 id="制作U盘启动盘"><a href="#制作U盘启动盘" class="headerlink" title="制作U盘启动盘"></a>制作U盘启动盘</h2><h3 id="Rufus-下载"><a href="#Rufus-下载" class="headerlink" title="Rufus 下载"></a>Rufus 下载</h3><p><a href="https://rufus.ie/">官方地址</a>|<a href="https://cloud.13141024.xyz/d/%E4%B8%80%E5%8F%B7%E9%98%81%E6%A5%BC/%5B%E7%B3%BB%E7%BB%9F%5D%E8%A3%85%E6%9C%BA%E5%B7%A5%E5%85%B7/rufus-3.20%E6%90%BA%E5%B8%A6%E7%89%88.exe">备用地址</a></p><h3 id="镜像写入"><a href="#镜像写入" class="headerlink" title="镜像写入"></a>镜像写入</h3><p><strong>Rufus使用步骤：</strong></p><p><img src="/2022/12/02/CentOS-7-%E4%BF%9D%E5%A7%86%E5%BC%8F%E6%95%99%E5%AD%A6-%E5%AE%89%E8%A3%85%20(%E4%B8%80)/image-20221202141039122.png" alt="image-20221202141039122"></p><ol><li>打开『Rufus』</li><li>在『设备』选择U盘设备</li><li>点击『选择』选择镜像文件</li><li>点击『开始』</li><li>弹出警告，选择『是』</li><li>等待『状态』进度条100% 完成</li></ol><h2 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h2><ol><li>将制作好的启动盘(U盘)插入电脑</li><li>开机时使用启动项菜单选择使用启动盘启动 或 进入BIOS设置引导顺序（不同品牌的主机快捷键稍有不同，具体按键请查阅主板说明书或百度）<ul><li>常见 组装机 BIOS—-DEL </li><li>常见 品牌节 BIOS—-F12</li></ul></li><li>以下为图文教程</li></ol>]]></content>
     
     
+    <summary type="html">&lt;h1 id=&quot;安装前准备工作&quot;&gt;&lt;a href=&quot;#安装前准备工作&quot; class=&quot;headerlink&quot; title=&quot;安装前准备工作&quot;&gt;&lt;/a&gt;安装前准备工作&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;需准备以下工具：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;U盘&lt;/li&gt;
+&lt;li&gt;CentOS-7 系统镜像&lt;/li&gt;
+&lt;li&gt;启动盘制作工具（&lt;a href=&quot;https://rufus.ie/&quot;&gt;Rufus&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
-    <category term="-hexo" scheme="http://blog.13141024.xyz/tags/hexo/"/>
+    
+    <category term="教程" scheme="http://blog.13141024.xyz/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="CentOS 7" scheme="http://blog.13141024.xyz/tags/CentOS-7/"/>
+    
+    <category term="Linux" scheme="http://blog.13141024.xyz/tags/Linux/"/>
     
   </entry>
   
